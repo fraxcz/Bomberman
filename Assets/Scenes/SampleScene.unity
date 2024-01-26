@@ -302,6 +302,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerInput: {fileID: 0}
   Bomb: {fileID: 1481779011618693510, guid: bc95f37f9d6403046925e4485160e47e, type: 3}
+  _destructible: {fileID: 411335065}
 --- !u!1 &411335062
 GameObject:
   m_ObjectHideFlags: 0
