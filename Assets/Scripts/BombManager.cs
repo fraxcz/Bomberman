@@ -7,7 +7,17 @@ static class BombManager
 {
    private static ArrayList Bombs = new ArrayList(); 
 
-    public static void DeployBomb(GameObject bomb) => Bombs.Add(bomb);
+    public static bool DeployBomb(GameObject bomb, Vector3 pos, PlayerScript player)
+    {
+        if (!CheckForBomb(pos))
+        {
+            var newBomb = BombScript.Deploy(bomb, pos);
+            newBomb.GetComponent<BombScript>().Player = player;
+            Bombs.Add(newBomb);
+            return true;
+        }
+        return false;
+    }
     public static void RemoveBomb(GameObject bomb) => Bombs.Remove(bomb);
 
     public static bool CheckForBomb(Vector3 pos)

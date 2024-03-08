@@ -25,8 +25,8 @@ public class Tiles : MonoBehaviour
         
     }
 
-    public static void Destruct(Vector2Int position)
+    public static void Destruct(int x, int y)
     {
-        Tilemap.SetTile(new Vector3Int(position.x, position.y, (int)Layers.Destructible), null);
+        Tilemap.SetTile(new Vector3Int(x, y, (int)Layers.Destructible), null);
     }
 } 

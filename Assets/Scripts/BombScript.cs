@@ -30,7 +30,7 @@ public class BombScript : MonoBehaviour
             Destroy(gameObject);
 
         }
-        if (PlayerOnBombInit && Math.Floor(Player.RB.position.x) != Math.Floor(transform.position.x) || PlayerOnBombInit && Math.Floor(Player.RB.position.y) != Math.Floor(transform.position.y))
+        if (PlayerOnBombInit && Math.Floor(Player.transform.position.x) != Math.Floor(transform.position.x) || PlayerOnBombInit && Math.Floor(Player.transform.position.y) != Math.Floor(transform.position.y))
         {
             boxCollider.isTrigger = false;
             PlayerOnBombInit = false;
@@ -47,33 +47,39 @@ public class BombScript : MonoBehaviour
     {
         if(i < size)
         {
-            if(left == true && Tiles.Tilemap.GetTile(new Vector3Int((int)(transform.position.x - 1.5f) - i, (int)(transform.position.y - 0.5f), (int)Layers.Destructible)) != null)
+            if(left == true && Tiles.Tilemap.GetTile(new Vector3Int((int)(transform.position.x - 1.5f) - i, (int)(transform.position.y - 0.5f), (int)Layers.Indestructible)) == null)
             {
-                Tiles.Destruct(new Vector2Int((int)(transform.position.x - 1.5f) - i, (int)(transform.position.y - 0.5f)));
+                Tiles.Destruct((int)(transform.position.x - 1.5f) - i, (int)(transform.position.y - 0.5f));
             }
             else left = false;
 
-            if (right == true && Tiles.Tilemap.GetTile(new Vector3Int((int)(transform.position.x + 0.5f) + i, (int)(transform.position.y - 0.5f), (int)Layers.Destructible)) != null){
-                Tiles.Destruct(new Vector2Int((int)(transform.position.x + 0.5f) + i, (int)(transform.position.y - 0.5f)));
+            if (right == true && Tiles.Tilemap.GetTile(new Vector3Int((int)(transform.position.x + 0.5f) + i, (int)(transform.position.y - 0.5f), (int)Layers.Indestructible)) == null)
+            {
+                Tiles.Destruct((int)(transform.position.x + 0.5f) + i, (int)(transform.position.y - 0.5f));
             }
 
             else right = false;
 
-            if (up == true && Tiles.Tilemap.GetTile(new Vector3Int((int)(transform.position.x - 0.5f), (int)(transform.position.y + 0.5f) + i, (int)Layers.Destructible)) != null)
+            if (up == true && Tiles.Tilemap.GetTile(new Vector3Int((int)(transform.position.x - 0.5f), (int)(transform.position.y + 0.5f) + i, (int)Layers.Indestructible)) == null)
             {
-                Tiles.Destruct(new Vector2Int((int)(transform.position.x - 0.5f), (int)(transform.position.y + 0.5f) + i));
+                Tiles.Destruct((int)(transform.position.x - 0.5f), (int)(transform.position.y + 0.5f) + i);
             }
 
             else up = false;
 
-            if (down == true && Tiles.Tilemap.GetTile(new Vector3Int((int)(transform.position.x - 0.5f), (int)(transform.position.y - 1.5f) - i, (int)Layers.Destructible)) != null)
+            if (down == true && Tiles.Tilemap.GetTile(new Vector3Int((int)(transform.position.x - 0.5f), (int)(transform.position.y - 1.5f) - i, (int)Layers.Indestructible)) == null)
             {
-                Tiles.Destruct(new Vector2Int((int)(transform.position.x - 0.5f), (int)(transform.position.y - 1.5f) - i));
+                Tiles.Destruct((int)(transform.position.x - 0.5f), (int)(transform.position.y - 1.5f) - i);
             }
 
             else down = false;
             Explode(size, left, right, up, down, i + 1);
         }
+    }
+
+    void checkPlayers()
+    {
+
     }
     public string toString()
     {

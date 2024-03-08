@@ -5,10 +5,10 @@ using UnityEngine.Tilemaps;
 
 public class PlayerScript : MonoBehaviour
 {
-    internal Rigidbody2D RB;
-    internal PlayerInput _playerInput;
     Vector2 dir;
-    public GameObject Bomb; 
+    [SerializeField] GameObject Bomb;
+    Rigidbody2D RB;
+    internal PlayerInput _playerInput;
     internal int CountBombPlaced;
     int MaxBombPlaced;
     internal Tilemap _destructible;
@@ -19,7 +19,7 @@ public class PlayerScript : MonoBehaviour
         _playerInput = GetComponent<PlayerInput>();
         RB = GetComponent<Rigidbody2D>();
         _destructible = GetComponent<Tilemap>();;
-        MaxBombPlaced = 5;
+        MaxBombPlaced = 3;
         CountBombPlaced = 0;
         SpaceHold = false;
 
@@ -34,7 +34,7 @@ public class PlayerScript : MonoBehaviour
         if (_playerInput.actions["Bomb"].ReadValue<float>() == 1f && CountBombPlaced < MaxBombPlaced && !SpaceHold)
         {
             DropBomb(RB.position.x, RB.position.y);
-            CountBombPlaced++;
+            Debug.Log(CountBombPlaced);
             SpaceHold = true;
         }
         else if(_playerInput.actions["Bomb"].ReadValue<float>() == 0f && SpaceHold)
@@ -46,12 +46,6 @@ public class PlayerScript : MonoBehaviour
     void DropBomb(float x, float y)
     {
         Vector3 pos = new Vector3(Mathf.Floor(x) + 0.5f, Mathf.Floor(y) + 0.5f, (int)Layers.Bomb);
-        if (!BombManager.CheckForBomb(pos))
-        {
-            var newBomb = BombScript.Deploy(Bomb, pos);
-            Debug.Log(newBomb);
-            newBomb.GetComponent<BombScript>().Player = this;
-            BombManager.DeployBomb(newBomb);
-        }
+        if(BombManager.DeployBomb(Bomb, pos, this)) CountBombPlaced++;
     }
 }
