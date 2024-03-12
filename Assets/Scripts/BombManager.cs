@@ -29,4 +29,8 @@ static class BombManager
         }
         return false;
     }
+    public static void SpawnPlayers(int count)
+    {
+
+    }
 }

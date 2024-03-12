@@ -8,6 +8,7 @@ public enum Layers
     Indestructible = 0,
     Destructible = 1,
     Bomb = 2,
+    BombArea = 3,
 
 }
 

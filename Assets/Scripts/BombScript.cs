@@ -77,7 +77,7 @@ public class BombScript : MonoBehaviour
         }
     }
 
-    void checkPlayers()
+    void checkPlayers(int x, int y)
     {
 
     }

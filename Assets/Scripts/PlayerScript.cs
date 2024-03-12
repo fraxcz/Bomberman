@@ -14,6 +14,7 @@ public class PlayerScript : MonoBehaviour
     internal Tilemap _destructible;
     bool SpaceHold;
 
+
     void Start()
     {
         _playerInput = GetComponent<PlayerInput>();
@@ -48,4 +49,6 @@ public class PlayerScript : MonoBehaviour
         Vector3 pos = new Vector3(Mathf.Floor(x) + 0.5f, Mathf.Floor(y) + 0.5f, (int)Layers.Bomb);
         if(BombManager.DeployBomb(Bomb, pos, this)) CountBombPlaced++;
     }
+
+
 }
