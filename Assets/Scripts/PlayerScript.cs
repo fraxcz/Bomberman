@@ -50,7 +50,7 @@ public class PlayerScript : MonoBehaviour
     void DropBomb(float x, float y)
     {
         Vector3 pos = new Vector3(Mathf.Floor(x) + 0.5f, Mathf.Floor(y) + 0.5f, (int)Layers.Bomb);
-        if(GameManager.DeployBomb(Bomb, pos, this)) CountBombPlaced++;
+        if(BombManager.DeployBomb(Bomb, pos, this)) CountBombPlaced++;
     }
     public void BombExploded()
     {

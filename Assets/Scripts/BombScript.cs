@@ -5,6 +5,7 @@ using UnityEngine.UIElements;
 
 public class BombScript : MonoBehaviour
 {
+    // TODO: Implement checking whose bomb it is using only PlayerID
     DateTime StartingTime;
     int Size;
     public PlayerScript Player;
