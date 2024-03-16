@@ -26,7 +26,7 @@ public class BombScript : MonoBehaviour
         {
             Explode(Size);
             Player.BombExploded();
-            BombManager.RemoveBomb(gameObject);
+            GameManager.RemoveBomb(gameObject);
             Destroy(gameObject);
 
         }

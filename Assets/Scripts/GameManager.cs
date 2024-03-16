@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-static class BombManager
+static class GameManager
 {
-   private static ArrayList Bombs = new ArrayList(); 
+    private static ArrayList Bombs = new ArrayList();
+
 
     public static bool DeployBomb(GameObject bomb, Vector3 pos, PlayerScript player)
     {

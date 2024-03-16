@@ -6,6 +6,7 @@ using UnityEngine.Tilemaps;
 public class PlayerScript : MonoBehaviour
 {
     Vector2 dir;
+    int PlayerID;
     [SerializeField] GameObject Bomb;
     Rigidbody2D RB;
     internal PlayerInput _playerInput;
@@ -19,7 +20,9 @@ public class PlayerScript : MonoBehaviour
     {
         _playerInput = GetComponent<PlayerInput>();
         RB = GetComponent<Rigidbody2D>();
-        _destructible = GetComponent<Tilemap>();;
+        _destructible = GetComponent<Tilemap>();
+        PlayerID = Game.PlayerCount();
+        _playerInput.defaultActionMap = "Player" + PlayerID;
         MaxBombPlaced = 3;
         CountBombPlaced = 0;
         SpaceHold = false;
@@ -47,7 +50,7 @@ public class PlayerScript : MonoBehaviour
     void DropBomb(float x, float y)
     {
         Vector3 pos = new Vector3(Mathf.Floor(x) + 0.5f, Mathf.Floor(y) + 0.5f, (int)Layers.Bomb);
-        if(BombManager.DeployBomb(Bomb, pos, this)) CountBombPlaced++;
+        if(GameManager.DeployBomb(Bomb, pos, this)) CountBombPlaced++;
     }
     public void BombExploded()
     {
