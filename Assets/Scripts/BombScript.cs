@@ -25,7 +25,7 @@ public class BombScript : MonoBehaviour
         if (ts.Seconds >= 3)
         {
             Explode(Size);
-            Player.CountBombPlaced--;
+            Player.BombExploded();
             BombManager.RemoveBomb(gameObject);
             Destroy(gameObject);
 
