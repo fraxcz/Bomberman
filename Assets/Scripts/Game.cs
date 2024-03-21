@@ -4,23 +4,15 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Game : MonoBehaviour
+internal class Game: MonoBehaviour
 {
-    [SerializeField] private static TMP_Dropdown NumberOfPlayersDropdown;
-    [SerializeField] private static TMP_Dropdown Terrain;
+    [SerializeField] private TMP_Dropdown NumberOfPlayersDropdown;
+    [SerializeField] private TMP_Dropdown Terrain;
 
-    public static int PlayerCount()
-    {
-        return int.Parse(NumberOfPlayersDropdown.itemText.ToString());
-    }
 
-    private static void TerrainOption()
+    public void OnClick()
     {
+        GameManager.NumberOfPlayers = int.Parse(NumberOfPlayersDropdown.options[NumberOfPlayersDropdown.value].text);
         SceneManager.LoadScene(Terrain.value);
-    }
-
-    public static void OnClick()
-    {
-        TerrainOption();
     }
 }

@@ -132,7 +132,7 @@ Rigidbody2D:
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &1842667339403952327
@@ -177,4 +177,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 540d037dcabdb344dbcf29b1d99c5b71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerID: 0
   Bomb: {fileID: 1481779011618693510, guid: bc95f37f9d6403046925e4485160e47e, type: 3}

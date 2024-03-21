@@ -44,6 +44,7 @@ public class BombScript : MonoBehaviour
         return Instantiate(bomb, pos, Quaternion.identity);
     }
 
+
     public void Explode(int size, bool left = true, bool right = true, bool up = true, bool down = true, int i = 0)
     {
         if(i < size)

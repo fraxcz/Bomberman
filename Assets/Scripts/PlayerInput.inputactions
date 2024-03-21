@@ -7,7 +7,7 @@
             "actions": [
                 {
                     "name": "Move",
-                    "type": "PassThrough",
+                    "type": "Value",
                     "id": "e0c061fb-a962-4e81-aad1-3743be9af65c",
                     "expectedControlType": "Vector2",
                     "processors": "",
@@ -99,7 +99,7 @@
             "actions": [
                 {
                     "name": "Move",
-                    "type": "PassThrough",
+                    "type": "Value",
                     "id": "78d6c7c6-af03-4766-b897-a807d17d9d67",
                     "expectedControlType": "Vector2",
                     "processors": "",
@@ -191,7 +191,7 @@
             "actions": [
                 {
                     "name": "Move",
-                    "type": "PassThrough",
+                    "type": "Value",
                     "id": "a4bf6a39-5c72-4064-aaaa-05786a57e663",
                     "expectedControlType": "Vector2",
                     "processors": "",
@@ -283,7 +283,7 @@
             "actions": [
                 {
                     "name": "Move",
-                    "type": "PassThrough",
+                    "type": "Value",
                     "id": "0673bf08-d482-471e-adb4-4e24f614be0d",
                     "expectedControlType": "Vector2",
                     "processors": "",
