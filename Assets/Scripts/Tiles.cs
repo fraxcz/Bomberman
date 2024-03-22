@@ -21,12 +21,8 @@ public class Tiles : MonoBehaviour
         Tilemap = GetComponent<Tilemap>();
     }
 
-    private void Update()
-    {
-        
-    }
 
-    public static void Destruct(int x, int y)
+        public static void Destruct(int x, int y)
     {
         Tilemap.SetTile(new Vector3Int(x, y, (int)Layers.Destructible), null);
     }

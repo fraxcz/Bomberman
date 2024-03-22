@@ -22,11 +22,9 @@ public class PlayerScript : MonoBehaviour
         RB = GetComponent<Rigidbody2D>();
         _destructible = GetComponent<Tilemap>();
         _playerInput.SwitchCurrentActionMap("Player" + PlayerID);
-        Debug.Log(_playerInput.inputIsActive);
         MaxBombPlaced = 3;
         CountBombPlaced = 0;
         SpaceHold = false;
-        Debug.Log("Spawned: Player " + PlayerID);
 
     }
 
@@ -39,7 +37,6 @@ public class PlayerScript : MonoBehaviour
         if (_playerInput.actions["Bomb"].ReadValue<float>() == 1f && CountBombPlaced < MaxBombPlaced && !SpaceHold)
         {
             DropBomb(RB.position.x, RB.position.y);
-            Debug.Log(CountBombPlaced);
             SpaceHold = true;
         }
         else if(_playerInput.actions["Bomb"].ReadValue<float>() == 0f && SpaceHold)
@@ -59,6 +56,11 @@ public class PlayerScript : MonoBehaviour
         {
             CountBombPlaced--;
         }
+    }
+
+    public void Die()
+    {
+        Destroy(gameObject);
     }
 
 

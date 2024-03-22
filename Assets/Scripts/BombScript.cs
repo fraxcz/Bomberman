@@ -45,19 +45,26 @@ public class BombScript : MonoBehaviour
     }
 
 
-    public void Explode(int size, bool left = true, bool right = true, bool up = true, bool down = true, int i = 0)
+    public void Explode(int size, bool left = true, bool right = true, bool up = true, bool down = true, int i = -1)
     {
         if(i < size)
         {
+            if(i == -1)
+            {
+                GameManager.CheckForPlayers((int)(Math.Floor(transform.position.x)), (int) (Math.Floor(transform.position.y)));
+                i++;
+            }
             if(left == true && Tiles.Tilemap.GetTile(new Vector3Int((int)(transform.position.x - 1.5f) - i, (int)(transform.position.y - 0.5f), (int)Layers.Indestructible)) == null)
             {
                 Tiles.Destruct((int)(transform.position.x - 1.5f) - i, (int)(transform.position.y - 0.5f));
+                GameManager.CheckForPlayers((int)(transform.position.x - 1.5f) - i, (int)(transform.position.y - 0.5f));
             }
             else left = false;
 
             if (right == true && Tiles.Tilemap.GetTile(new Vector3Int((int)(transform.position.x + 0.5f) + i, (int)(transform.position.y - 0.5f), (int)Layers.Indestructible)) == null)
             {
                 Tiles.Destruct((int)(transform.position.x + 0.5f) + i, (int)(transform.position.y - 0.5f));
+                GameManager.CheckForPlayers((int)(transform.position.x + 0.5f) + i, (int)(transform.position.y - 0.5f));
             }
 
             else right = false;
@@ -65,6 +72,7 @@ public class BombScript : MonoBehaviour
             if (up == true && Tiles.Tilemap.GetTile(new Vector3Int((int)(transform.position.x - 0.5f), (int)(transform.position.y + 0.5f) + i, (int)Layers.Indestructible)) == null)
             {
                 Tiles.Destruct((int)(transform.position.x - 0.5f), (int)(transform.position.y + 0.5f) + i);
+                GameManager.CheckForPlayers((int)(transform.position.x - 0.5f), (int)(transform.position.y + 0.5f) + i);
             }
 
             else up = false;
@@ -72,19 +80,11 @@ public class BombScript : MonoBehaviour
             if (down == true && Tiles.Tilemap.GetTile(new Vector3Int((int)(transform.position.x - 0.5f), (int)(transform.position.y - 1.5f) - i, (int)Layers.Indestructible)) == null)
             {
                 Tiles.Destruct((int)(transform.position.x - 0.5f), (int)(transform.position.y - 1.5f) - i);
+                GameManager.CheckForPlayers((int)(transform.position.x - 0.5f), (int)(transform.position.y - 1.5f) - i);
             }
 
             else down = false;
             Explode(size, left, right, up, down, i + 1);
         }
-    }
-
-    void checkPlayers(int x, int y)
-    {
-
-    }
-    public string toString()
-    {
-        return "a bumb";
     }
 }

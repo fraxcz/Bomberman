@@ -1,13 +1,19 @@
 using JetBrains.Annotations;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
+using UnityEngine.SceneManagement;
 
 class GameManager: MonoBehaviour
 {
-    private static ArrayList Bombs = new ArrayList();
-    public static int NumberOfPlayers { get; set; } = 0;
+    private static List<GameObject> Bombs = new List<GameObject>();
+    private static List<GameObject> Players = new List<GameObject>();
+    public static int NumberOfPlayers { get; set; }
     private Vector3[] SpawnPositions;
     [SerializeField] private GameObject Player;
 
@@ -17,9 +23,17 @@ class GameManager: MonoBehaviour
         for (int i = 0; i < NumberOfPlayers; i++)
         {
             Player.GetComponent<PlayerScript>().PlayerID = i + 1;
-            Instantiate(Player, SpawnPositions[i], Quaternion.identity);
+            Players.Add(Instantiate(Player, SpawnPositions[i], Quaternion.identity));
         }
-
+    }
+    private void Update()
+    {
+        if(NumberOfPlayers == 0)
+        {
+            Players.Clear();
+            Bombs.Clear();
+            SceneManager.LoadScene(1);
+        }
     }
     public static bool DeployBomb(GameObject bomb, Vector3 pos, PlayerScript player)
     {
@@ -40,8 +54,20 @@ class GameManager: MonoBehaviour
         foreach (GameObject Bomb in Bombs)
         {
             if (Bomb.transform.position == pos) return true;
-            Debug.Log(Bomb);
         }
         return false;
     }
+    public static void CheckForPlayers(int x, int y)
+    {
+        foreach(GameObject player in Players)
+        {
+            if (player.IsDestroyed()) continue;
+            else if (Math.Floor(player.transform.position.x) == x && Math.Floor(player.transform.position.y) == y)
+            {
+                player.GetComponent<PlayerScript>().Die();
+                NumberOfPlayers--;
+            }
+        }
+    }
+
 }
