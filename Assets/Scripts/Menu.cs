@@ -4,15 +4,16 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-internal class Game: MonoBehaviour
+internal class Menu: MonoBehaviour
 {
     [SerializeField] private TMP_Dropdown NumberOfPlayersDropdown;
     [SerializeField] private TMP_Dropdown Terrain;
 
 
-    public void OnClick()
+    public void LoadLevel()
     {
         GameManager.NumberOfPlayers = int.Parse(NumberOfPlayersDropdown.options[NumberOfPlayersDropdown.value].text);
         SceneManager.LoadScene(Terrain.value);
     }
+
 }

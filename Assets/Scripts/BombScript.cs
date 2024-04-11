@@ -5,7 +5,6 @@ using UnityEngine.UIElements;
 
 public class BombScript : MonoBehaviour
 {
-    // TODO: Implement checking whose bomb it is using only PlayerID
     DateTime StartingTime;
     int Size;
     public PlayerScript Player;
@@ -26,7 +25,10 @@ public class BombScript : MonoBehaviour
         if (ts.Seconds >= 3)
         {
             Explode(Size);
-            Player.BombExploded();
+            if (Player != null)
+            {
+                Player.BombExploded();
+            }
             GameManager.RemoveBomb(gameObject);
             Destroy(gameObject);
 
@@ -45,42 +47,42 @@ public class BombScript : MonoBehaviour
     }
 
 
-    public void Explode(int size, bool left = true, bool right = true, bool up = true, bool down = true, int i = -1)
+    public void Explode(int size, bool left = true, bool right = true, bool up = true, bool down = true, int i = 0)
     {
-        if(i < size)
+        if(i <= size)
         {
-            if(i == -1)
+            if(i == 0)
             {
                 GameManager.CheckForPlayers((int)(Math.Floor(transform.position.x)), (int) (Math.Floor(transform.position.y)));
                 i++;
             }
-            if(left == true && Tiles.Tilemap.GetTile(new Vector3Int((int)(transform.position.x - 1.5f) - i, (int)(transform.position.y - 0.5f), (int)Layers.Indestructible)) == null)
+            if(left == true && Tiles.Tilemap.GetTile(new Vector3Int((int)(transform.position.x - 0.5f) - i, (int)(transform.position.y - 0.5f), (int)Layers.Indestructible)) == null)
             {
-                Tiles.Destruct((int)(transform.position.x - 1.5f) - i, (int)(transform.position.y - 0.5f));
-                GameManager.CheckForPlayers((int)(transform.position.x - 1.5f) - i, (int)(transform.position.y - 0.5f));
+                Tiles.Destruct((int)(transform.position.x - 0.5f) - i, (int)(transform.position.y - 0.5f));
+                GameManager.CheckForPlayers((int)(transform.position.x - 0.5f) - i, (int)(transform.position.y - 0.5f));
             }
             else left = false;
 
-            if (right == true && Tiles.Tilemap.GetTile(new Vector3Int((int)(transform.position.x + 0.5f) + i, (int)(transform.position.y - 0.5f), (int)Layers.Indestructible)) == null)
+            if (right == true && Tiles.Tilemap.GetTile(new Vector3Int((int)(transform.position.x - 0.5f) + i, (int)(transform.position.y - 0.5f), (int)Layers.Indestructible)) == null)
             {
-                Tiles.Destruct((int)(transform.position.x + 0.5f) + i, (int)(transform.position.y - 0.5f));
-                GameManager.CheckForPlayers((int)(transform.position.x + 0.5f) + i, (int)(transform.position.y - 0.5f));
+                Tiles.Destruct((int)(transform.position.x - 0.5f) + i, (int)(transform.position.y - 0.5f));
+                GameManager.CheckForPlayers((int)(transform.position.x - 0.5f) + i, (int)(transform.position.y - 0.5f));
             }
 
             else right = false;
 
-            if (up == true && Tiles.Tilemap.GetTile(new Vector3Int((int)(transform.position.x - 0.5f), (int)(transform.position.y + 0.5f) + i, (int)Layers.Indestructible)) == null)
+            if (up == true && Tiles.Tilemap.GetTile(new Vector3Int((int)(transform.position.x - 0.5f), (int)(transform.position.y - 0.5f) + i, (int)Layers.Indestructible)) == null)
             {
-                Tiles.Destruct((int)(transform.position.x - 0.5f), (int)(transform.position.y + 0.5f) + i);
-                GameManager.CheckForPlayers((int)(transform.position.x - 0.5f), (int)(transform.position.y + 0.5f) + i);
+                Tiles.Destruct((int)(transform.position.x - 0.5f), (int)(transform.position.y - 0.5f) + i);
+                GameManager.CheckForPlayers((int)(transform.position.x - 0.5f), (int)(transform.position.y - 0.5f) + i);
             }
 
             else up = false;
 
-            if (down == true && Tiles.Tilemap.GetTile(new Vector3Int((int)(transform.position.x - 0.5f), (int)(transform.position.y - 1.5f) - i, (int)Layers.Indestructible)) == null)
+            if (down == true && Tiles.Tilemap.GetTile(new Vector3Int((int)(transform.position.x - 0.5f), (int)(transform.position.y - 0.5f) - i, (int)Layers.Indestructible)) == null)
             {
-                Tiles.Destruct((int)(transform.position.x - 0.5f), (int)(transform.position.y - 1.5f) - i);
-                GameManager.CheckForPlayers((int)(transform.position.x - 0.5f), (int)(transform.position.y - 1.5f) - i);
+                Tiles.Destruct((int)(transform.position.x - 0.5f), (int)(transform.position.y - 0.5f) - i);
+                GameManager.CheckForPlayers((int)(transform.position.x - 0.5f), (int)(transform.position.y - 0.5f) - i);
             }
 
             else down = false;

@@ -1,21 +1,20 @@
-using JetBrains.Annotations;
+
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 class GameManager: MonoBehaviour
 {
     private static List<GameObject> Bombs = new List<GameObject>();
     private static List<GameObject> Players = new List<GameObject>();
-    public static int NumberOfPlayers { get; set; }
+    public static int NumberOfPlayers;      
     private Vector3[] SpawnPositions;
     [SerializeField] private GameObject Player;
+    [SerializeField] private GameObject PauseMenu;
+    private bool Paused = false;
 
     private void Start()
     {
@@ -28,11 +27,22 @@ class GameManager: MonoBehaviour
     }
     private void Update()
     {
-        if(NumberOfPlayers == 0)
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Players.Clear();
-            Bombs.Clear();
-            SceneManager.LoadScene(1);
+            if(!Paused)
+            {
+                Paused = true;
+                PauseMenu.SetActive(true);
+                Time.timeScale = 0.0f;
+            }
+            else
+            {
+                ResumeGame();
+            }
+        }
+        if(NumberOfPlayers <= 1)
+        {
+            MainMenu();
         }
     }
     public static bool DeployBomb(GameObject bomb, Vector3 pos, PlayerScript player)
@@ -48,6 +58,20 @@ class GameManager: MonoBehaviour
     }
     public static void RemoveBomb(GameObject bomb) => Bombs.Remove(bomb);
 
+    public void ResumeGame()
+    {
+        Paused = false;
+        PauseMenu.SetActive(false);
+        Time.timeScale = 1.0f;
+    }
+
+    public void MainMenu()
+    {
+        Time.timeScale = 1.0f;
+        Players.Clear();
+        Bombs.Clear();
+        SceneManager.LoadScene(1);
+    }
 
     public static bool CheckForBomb(Vector3 pos)
     {
