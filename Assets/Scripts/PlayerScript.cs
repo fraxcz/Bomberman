@@ -6,6 +6,7 @@ using UnityEngine.Tilemaps;
 public class PlayerScript : MonoBehaviour
 {
     Vector2 dir;
+    private Animator Animator;
     public int PlayerID;
     [SerializeField] GameObject Bomb;
     Rigidbody2D RB;
@@ -14,6 +15,7 @@ public class PlayerScript : MonoBehaviour
     int MaxBombPlaced;
     internal Tilemap _destructible;
     bool SpaceHold;
+    SpriteRenderer SpriteRender;
 
 
     void Start()
@@ -21,6 +23,8 @@ public class PlayerScript : MonoBehaviour
         _playerInput = GetComponent<PlayerInput>();
         RB = GetComponent<Rigidbody2D>();
         _destructible = GetComponent<Tilemap>();
+        Animator = GetComponent<Animator>();
+        SpriteRender = GetComponent<SpriteRenderer>();
         _playerInput.SwitchCurrentActionMap("Player" + PlayerID);
         MaxBombPlaced = 3;
         CountBombPlaced = 0;
@@ -43,6 +47,7 @@ public class PlayerScript : MonoBehaviour
         {
             SpaceHold = false;
         }
+        AnimationUpdate();
     }
 
     void DropBomb(float x, float y)
@@ -58,6 +63,22 @@ public class PlayerScript : MonoBehaviour
         }
     }
 
+    void AnimationUpdate()
+    {
+        if (dir.x > 0f)
+        {
+            SpriteRender.flipX = false;
+            Animator.SetBool("IsRunning", true);
+        }
+        else if (dir.x < 0f)
+        {
+            SpriteRender.flipX = true;
+            Animator.SetBool("IsRunning", true);
+        }
+
+        else if (dir.y > 0f || dir.y < 0f) Animator.SetBool("IsRunning", true);
+        else Animator.SetBool("IsRunning", false);
+    }
     public void Die()
     {
         Destroy(gameObject);
