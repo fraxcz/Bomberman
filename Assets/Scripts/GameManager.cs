@@ -68,7 +68,7 @@ class GameManager: MonoBehaviour
         Time.timeScale = 1.0f;
         Players.Clear();
         Bombs.Clear();
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
 
     public static bool CheckForBomb(Vector3 pos)

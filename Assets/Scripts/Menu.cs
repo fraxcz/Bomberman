@@ -11,7 +11,7 @@ internal class Menu: MonoBehaviour
     public void LoadLevel()
     {
         GameManager.NumberOfPlayers = int.Parse(NumberOfPlayersDropdown.options[NumberOfPlayersDropdown.value].text);
-        SceneManager.LoadScene(Terrain.value);
+        SceneManager.LoadScene(Terrain.value + 1);
     }
     public void Quit()
     {

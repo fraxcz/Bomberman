@@ -8,6 +8,7 @@ public class BombScript : MonoBehaviour
     public PlayerScript Player;
     BoxCollider2D boxCollider;
     bool PlayerOnBombInit;
+    public GameObject Explosion;
     void Start()
     {
         StartingTime = DateTime.Now;
@@ -51,12 +52,14 @@ public class BombScript : MonoBehaviour
         {
             if(i == 0)
             {
-                GameManager.CheckForPlayers((int)(Math.Floor(transform.position.x)), (int) (Math.Floor(transform.position.y)));
+                GameManager.CheckForPlayers((int)Math.Floor(transform.position.x), (int)Math.Floor(transform.position.y));
+                Instantiate(Explosion, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
                 i++;
             }
             if(left == true && Tiles.Tilemap.GetTile(new Vector3Int((int)(transform.position.x - 0.5f) - i, (int)(transform.position.y - 0.5f), (int)Layers.Indestructible)) == null)
             {
                 Tiles.Destruct((int)(transform.position.x - 0.5f) - i, (int)(transform.position.y - 0.5f));
+                Instantiate(Explosion,new Vector3(transform.position.x - i, transform.position.y, transform.position.z), Quaternion.identity);
                 GameManager.CheckForPlayers((int)(transform.position.x - 0.5f) - i, (int)(transform.position.y - 0.5f));
             }
             else left = false;
@@ -64,6 +67,7 @@ public class BombScript : MonoBehaviour
             if (right == true && Tiles.Tilemap.GetTile(new Vector3Int((int)(transform.position.x - 0.5f) + i, (int)(transform.position.y - 0.5f), (int)Layers.Indestructible)) == null)
             {
                 Tiles.Destruct((int)(transform.position.x - 0.5f) + i, (int)(transform.position.y - 0.5f));
+                Instantiate(Explosion, new Vector3(transform.position.x + i, transform.position.y, transform.position.z), Quaternion.identity);
                 GameManager.CheckForPlayers((int)(transform.position.x - 0.5f) + i, (int)(transform.position.y - 0.5f));
             }
 
@@ -72,6 +76,7 @@ public class BombScript : MonoBehaviour
             if (up == true && Tiles.Tilemap.GetTile(new Vector3Int((int)(transform.position.x - 0.5f), (int)(transform.position.y - 0.5f) + i, (int)Layers.Indestructible)) == null)
             {
                 Tiles.Destruct((int)(transform.position.x - 0.5f), (int)(transform.position.y - 0.5f) + i);
+                Instantiate(Explosion, new Vector3(transform.position.x, transform.position.y + i, transform.position.z), Quaternion.identity);
                 GameManager.CheckForPlayers((int)(transform.position.x - 0.5f), (int)(transform.position.y - 0.5f) + i);
             }
 
@@ -80,6 +85,7 @@ public class BombScript : MonoBehaviour
             if (down == true && Tiles.Tilemap.GetTile(new Vector3Int((int)(transform.position.x - 0.5f), (int)(transform.position.y - 0.5f) - i, (int)Layers.Indestructible)) == null)
             {
                 Tiles.Destruct((int)(transform.position.x - 0.5f), (int)(transform.position.y - 0.5f) - i);
+                Instantiate(Explosion, new Vector3(transform.position.x, transform.position.y - i, transform.position.z), Quaternion.identity);
                 GameManager.CheckForPlayers((int)(transform.position.x - 0.5f), (int)(transform.position.y - 0.5f) - i);
             }
 
