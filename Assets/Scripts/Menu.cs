@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -14,6 +12,10 @@ internal class Menu: MonoBehaviour
     {
         GameManager.NumberOfPlayers = int.Parse(NumberOfPlayersDropdown.options[NumberOfPlayersDropdown.value].text);
         SceneManager.LoadScene(Terrain.value);
+    }
+    public void Quit()
+    {
+        Application.Quit();
     }
 
 }
