@@ -16,7 +16,7 @@ class GameManager: MonoBehaviour
 
     private void Start()
     {
-        SpawnPositions = new Vector3[] {new Vector3(-6.5f, -3.4f, 0f), new Vector3(6.5f, -3.4f, 0f), new Vector3(6.5f, 3.6f, 0f), new Vector3(-6.5f, 3.6f, 0f)};
+        SpawnPositions = new Vector3[] {new Vector3(-6.5f, -3.4f, 0f), new Vector3(6.5f, -3.4f, 0f), new Vector3(0f, 3.6f, 0f)};
         for (int i = 0; i < NumberOfPlayers; i++)
         {
             Player.GetComponent<PlayerScript>().PlayerID = i + 1;

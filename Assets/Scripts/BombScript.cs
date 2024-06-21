@@ -7,14 +7,12 @@ public class BombScript : MonoBehaviour
     int Size;
     public PlayerScript Player;
     BoxCollider2D boxCollider;
-    bool PlayerOnBombInit;
     public GameObject Explosion;
     void Start()
     {
         StartingTime = DateTime.Now;
         Size = 2;
         boxCollider = GetComponent<BoxCollider2D>();
-        PlayerOnBombInit = true;
     }
 
     // Update is called once per frame
@@ -32,10 +30,13 @@ public class BombScript : MonoBehaviour
             Destroy(gameObject);
 
         }
-        if (PlayerOnBombInit && Math.Floor(Player.transform.position.x) != Math.Floor(transform.position.x) || PlayerOnBombInit && Math.Floor(Player.transform.position.y) != Math.Floor(transform.position.y))
+        if (Player == null)
         {
             boxCollider.isTrigger = false;
-            PlayerOnBombInit = false;
+        }
+        else if (Math.Floor(Player.transform.position.x) != Math.Floor(transform.position.x) ||  Math.Floor(Player.transform.position.y) != Math.Floor(transform.position.y))
+        {
+            boxCollider.isTrigger = false;
         }
 
     }

@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Tilemaps;
@@ -8,6 +9,7 @@ public class PlayerScript : MonoBehaviour
     private Animator Animator;
     public int PlayerID;
     [SerializeField] GameObject Bomb;
+    [SerializeField] TMP_Text NameHolder;
     Rigidbody2D RB;
     internal PlayerInput _playerInput;
     internal int CountBombPlaced;
@@ -25,6 +27,7 @@ public class PlayerScript : MonoBehaviour
         Animator = GetComponent<Animator>();
         SpriteRender = GetComponent<SpriteRenderer>();
         _playerInput.SwitchCurrentActionMap("Player" + PlayerID);
+        NameHolder.text = "Player " + PlayerID;
         MaxBombPlaced = 3;
         CountBombPlaced = 0;
         SpaceHold = false;
