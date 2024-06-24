@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ca84d035c4e47654dae0ecf23fd7548d
+guid: e256ba2231dedce4a904989ee694866c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -68,7 +68,7 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
-    resizeAlgorithm: 1
+    resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -105,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Run (32x32) 1_0
+      name: Yellow_idle_0
       rect:
         serializedVersion: 2
         x: 0
@@ -113,20 +113,20 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 68e4673c3ba05084383b2a6149dc03ad
-      internalID: -1895900410
+      spriteID: 0aaea61676427d04083c3b97f25c4113
+      internalID: -31793552
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run (32x32) 1_1
+      name: Yellow_idle_1
       rect:
         serializedVersion: 2
         x: 32
@@ -134,20 +134,20 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 77ca4b6548aaff84289925c246ed8365
-      internalID: 1956364585
+      spriteID: c5a5d892e72457c47bc63e13c6cc7b44
+      internalID: 1690644373
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run (32x32) 1_2
+      name: Yellow_idle_2
       rect:
         serializedVersion: 2
         x: 64
@@ -155,20 +155,20 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 29e22a56771b92c45bb7e43b2a7ff70a
-      internalID: -1379635074
+      spriteID: 1fdb1c710def8a647907d50f280f87a6
+      internalID: 208173700
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run (32x32) 1_3
+      name: Yellow_idle_3
       rect:
         serializedVersion: 2
         x: 96
@@ -176,20 +176,20 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d812d9ae942b7424d82d01ddf7e46349
-      internalID: 711195638
+      spriteID: b679560097b894c45b2144695c49dea0
+      internalID: 2058438506
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run (32x32) 1_4
+      name: Yellow_idle_4
       rect:
         serializedVersion: 2
         x: 128
@@ -197,20 +197,20 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e8900d8020c6974a9f4ff832d72f7d3
-      internalID: -1265337740
+      spriteID: f4e5d6446e6b33e4b8dd11cb4237765b
+      internalID: 79212294
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run (32x32) 1_5
+      name: Yellow_idle_5
       rect:
         serializedVersion: 2
         x: 160
@@ -218,20 +218,20 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 495c6608995f1c14893ae29e15a18005
-      internalID: -302904260
+      spriteID: 9fde621ed5bd8004a8b678384941434a
+      internalID: -394454018
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run (32x32) 1_6
+      name: Yellow_idle_6
       rect:
         serializedVersion: 2
         x: 192
@@ -239,20 +239,20 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 776df1f7950aaaa4ca475cca21aac7f9
-      internalID: -291291556
+      spriteID: 5a5b90baf4595c94fa75709bdfe7c516
+      internalID: 1750294104
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run (32x32) 1_7
+      name: Yellow_idle_7
       rect:
         serializedVersion: 2
         x: 224
@@ -260,20 +260,20 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a54bd8f74eef32940b803de16039f590
-      internalID: 1874068720
+      spriteID: 1744b8704ceabb049ad4a3e6df46663b
+      internalID: 1432183777
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run (32x32) 1_8
+      name: Yellow_idle_8
       rect:
         serializedVersion: 2
         x: 256
@@ -281,20 +281,20 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bc2198ddcc5b4ef45b2649ad52d4a43a
-      internalID: 1640435663
+      spriteID: aec2101d0e9b812439184f683cf84f06
+      internalID: 927756470
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run (32x32) 1_9
+      name: Yellow_idle_9
       rect:
         serializedVersion: 2
         x: 288
@@ -302,20 +302,20 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5a0efb12819fb73428c7a686295ca691
-      internalID: 1042078569
+      spriteID: 90f224dd961c838489788ab7cf4fc147
+      internalID: -1275233256
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run (32x32) 1_10
+      name: Yellow_idle_10
       rect:
         serializedVersion: 2
         x: 320
@@ -323,35 +323,14 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb145e778745cef44b1079886a84798f
-      internalID: -1248498279
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Run (32x32) 1_11
-      rect:
-        serializedVersion: 2
-        x: 352
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6fc4131f814ad7340b82621f51c0ec09
-      internalID: -1095252973
+      spriteID: 3e6169c251f269e4bb4b3b793a310702
+      internalID: -1715336642
       vertices: []
       indices: 
       edges: []
@@ -367,18 +346,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Run (32x32) 1_0: -1895900410
-      Run (32x32) 1_1: 1956364585
-      Run (32x32) 1_10: -1248498279
-      Run (32x32) 1_11: -1095252973
-      Run (32x32) 1_2: -1379635074
-      Run (32x32) 1_3: 711195638
-      Run (32x32) 1_4: -1265337740
-      Run (32x32) 1_5: -302904260
-      Run (32x32) 1_6: -291291556
-      Run (32x32) 1_7: 1874068720
-      Run (32x32) 1_8: 1640435663
-      Run (32x32) 1_9: 1042078569
+      Yellow_idle_0: -31793552
+      Yellow_idle_1: 1690644373
+      Yellow_idle_10: -1715336642
+      Yellow_idle_2: 208173700
+      Yellow_idle_3: 2058438506
+      Yellow_idle_4: 79212294
+      Yellow_idle_5: -394454018
+      Yellow_idle_6: 1750294104
+      Yellow_idle_7: 1432183777
+      Yellow_idle_8: 927756470
+      Yellow_idle_9: -1275233256
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

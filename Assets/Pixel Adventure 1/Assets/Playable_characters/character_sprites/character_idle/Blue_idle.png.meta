@@ -105,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Idle (32x32)_0
+      name: Blue_idle_0
       rect:
         serializedVersion: 2
         x: 0
@@ -119,14 +119,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 75e11f7900de767469ead3dbe4d9292b
-      internalID: -1467871125
+      spriteID: f09db00a34ff4c84c92f51d5fbe38ccb
+      internalID: -537437101
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle (32x32)_1
+      name: Blue_idle_1
       rect:
         serializedVersion: 2
         x: 32
@@ -140,14 +140,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 336d5507260975f4c820e4c016a5fb97
-      internalID: 1710079544
+      spriteID: d372c8aaa58058946bb2fbfe97f2694e
+      internalID: -717980
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle (32x32)_2
+      name: Blue_idle_2
       rect:
         serializedVersion: 2
         x: 64
@@ -161,14 +161,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05f9e1cd745e30141b4be34a17b3957c
-      internalID: -1163817757
+      spriteID: 78b71debe95552d4486c359cc6bf3fdb
+      internalID: 1813254317
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle (32x32)_3
+      name: Blue_idle_3
       rect:
         serializedVersion: 2
         x: 96
@@ -182,14 +182,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 65b68b3aa6e99804d8237204bfd744fe
-      internalID: 1113145966
+      spriteID: de05dc4e565deb94b80b6c5c89480375
+      internalID: -1057788141
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle (32x32)_4
+      name: Blue_idle_4
       rect:
         serializedVersion: 2
         x: 128
@@ -203,14 +203,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0bc42d784f10f43448a955ea1a13c6bd
-      internalID: 1926271057
+      spriteID: ee6d29fb5b2c1bb429edce53feae4d36
+      internalID: 1402251326
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle (32x32)_5
+      name: Blue_idle_5
       rect:
         serializedVersion: 2
         x: 160
@@ -224,14 +224,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4cde227bff911424d8662fc5c0ff1b14
-      internalID: 118505110
+      spriteID: ba6e0583e17e9ae43992a798dbda3c60
+      internalID: 1503189291
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle (32x32)_6
+      name: Blue_idle_6
       rect:
         serializedVersion: 2
         x: 192
@@ -245,14 +245,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: df534d95f44c0234a9459fc188b51a5d
-      internalID: -778013636
+      spriteID: 0f9b74ed0dd0b8343a898a28bb831f67
+      internalID: 173683164
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle (32x32)_7
+      name: Blue_idle_7
       rect:
         serializedVersion: 2
         x: 224
@@ -266,14 +266,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c310b4c0538469438061872a0121d03
-      internalID: 727893767
+      spriteID: c78e7edff9aed4b4181a8313a878966a
+      internalID: 1324285364
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle (32x32)_8
+      name: Blue_idle_8
       rect:
         serializedVersion: 2
         x: 256
@@ -287,14 +287,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0bbcceb2e3618e9488c85d23ee00c82d
-      internalID: -275930872
+      spriteID: 02ba5dfcddb0770448563bc8ad8eedbb
+      internalID: -1113060893
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle (32x32)_9
+      name: Blue_idle_9
       rect:
         serializedVersion: 2
         x: 288
@@ -308,14 +308,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 28d1def1c4963f146b58a24312c66d00
-      internalID: 1869576297
+      spriteID: 7e63a0fb284c62a43955be0821eea2aa
+      internalID: 1621593068
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle (32x32)_10
+      name: Blue_idle_10
       rect:
         serializedVersion: 2
         x: 320
@@ -329,8 +329,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4231323c9bbc65b4898b6baf8db143dc
-      internalID: 224473349
+      spriteID: 08d28830c49f13644aa32de0d85327fd
+      internalID: 1874113813
       vertices: []
       indices: 
       edges: []
@@ -346,17 +346,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Idle (32x32)_0: -1467871125
-      Idle (32x32)_1: 1710079544
-      Idle (32x32)_10: 224473349
-      Idle (32x32)_2: -1163817757
-      Idle (32x32)_3: 1113145966
-      Idle (32x32)_4: 1926271057
-      Idle (32x32)_5: 118505110
-      Idle (32x32)_6: -778013636
-      Idle (32x32)_7: 727893767
-      Idle (32x32)_8: -275930872
-      Idle (32x32)_9: 1869576297
+      Blue_idle_0: -537437101
+      Blue_idle_1: -717980
+      Blue_idle_10: 1874113813
+      Blue_idle_2: 1813254317
+      Blue_idle_3: -1057788141
+      Blue_idle_4: 1402251326
+      Blue_idle_5: 1503189291
+      Blue_idle_6: 173683164
+      Blue_idle_7: 1324285364
+      Blue_idle_8: -1113060893
+      Blue_idle_9: 1621593068
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

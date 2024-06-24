@@ -149,7 +149,9 @@ GameObject:
   - component: {fileID: 1842667339403952314}
   - component: {fileID: 1842667339403952327}
   - component: {fileID: 1842667339403952325}
-  - component: {fileID: 2083801296190813732}
+  - component: {fileID: 1944458826973429508}
+  - component: {fileID: 1764326466509558871}
+  - component: {fileID: 5805432079200706240}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -214,7 +216,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: -6367560908665664636, guid: 40de9a8703e2e5a47882b0b86451c741, type: 3}
+  m_Sprite: {fileID: -537437101, guid: 40de9a8703e2e5a47882b0b86451c741, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -222,7 +224,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &1842667339403952315
@@ -317,7 +319,36 @@ MonoBehaviour:
   PlayerID: 0
   Bomb: {fileID: 1481779011618693510, guid: bc95f37f9d6403046925e4485160e47e, type: 3}
   NameHolder: {fileID: 7793130971135088678}
---- !u!95 &2083801296190813732
+--- !u!114 &1944458826973429508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1842667339403952317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c29cff538c195c249b69c6f2236de67b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Library: []
+  m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: 85ba7e0a6d42bda4fbbd8f5a08641d32, type: 3}
+--- !u!114 &1764326466509558871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1842667339403952317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed8b1ae4e4e52b34ea557c1c11e076fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CategoryHash: 0
+  m_labelHash: 0
+  m_SpriteKey: 1.7846098e-30
+--- !u!95 &5805432079200706240
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
