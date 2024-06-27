@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Tilemaps;
+using UnityEngine.U2D.Animation;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class PlayerScript : MonoBehaviour
     public int PlayerID;
     [SerializeField] GameObject Bomb;
     [SerializeField] TMP_Text NameHolder;
+    [SerializeField] SpriteLibrary spriteLibrary;
+    private SpriteRenderer spriteRenderer;
+    [SerializeField] SpriteLibraryAsset[] spriteLibraryAsset;
     Rigidbody2D RB;
     internal PlayerInput _playerInput;
     internal int CountBombPlaced;
@@ -26,6 +30,7 @@ public class PlayerScript : MonoBehaviour
         _destructible = GetComponent<Tilemap>();
         Animator = GetComponent<Animator>();
         SpriteRender = GetComponent<SpriteRenderer>();
+        spriteLibrary = GetComponent<SpriteLibrary>();
         _playerInput.SwitchCurrentActionMap("Player" + PlayerID);
         NameHolder.text = "Player " + PlayerID;
         MaxBombPlaced = 3;

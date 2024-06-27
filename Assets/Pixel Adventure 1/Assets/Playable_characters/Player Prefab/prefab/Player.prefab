@@ -216,7 +216,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: -537437101, guid: 40de9a8703e2e5a47882b0b86451c741, type: 3}
+  m_Sprite: {fileID: -1216211916, guid: ca84d035c4e47654dae0ecf23fd7548d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -316,9 +316,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 540d037dcabdb344dbcf29b1d99c5b71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerID: 0
   Bomb: {fileID: 1481779011618693510, guid: bc95f37f9d6403046925e4485160e47e, type: 3}
   NameHolder: {fileID: 7793130971135088678}
+  spriteLibrary: {fileID: 0}
+  spriteLibraryAsset: []
 --- !u!114 &1944458826973429508
 MonoBehaviour:
   m_ObjectHideFlags: 0
