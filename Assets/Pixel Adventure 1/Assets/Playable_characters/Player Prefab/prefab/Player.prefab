@@ -316,10 +316,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 540d037dcabdb344dbcf29b1d99c5b71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerID: 0
   Bomb: {fileID: 1481779011618693510, guid: bc95f37f9d6403046925e4485160e47e, type: 3}
   NameHolder: {fileID: 7793130971135088678}
-  spriteLibrary: {fileID: 0}
-  spriteLibraryAsset: []
+  spriteLibraryAsset:
+  - {fileID: 7108339969198208228, guid: 85ba7e0a6d42bda4fbbd8f5a08641d32, type: 3}
+  - {fileID: 7108339969198208228, guid: 8f5ad24c1ddb029429f25c352c2f9e76, type: 3}
+  - {fileID: 7108339969198208228, guid: 40bb9c1a34a16254ebfbaff29424341b, type: 3}
 --- !u!114 &1944458826973429508
 MonoBehaviour:
   m_ObjectHideFlags: 0

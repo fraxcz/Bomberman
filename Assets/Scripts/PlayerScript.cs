@@ -11,8 +11,7 @@ public class PlayerScript : MonoBehaviour
     public int PlayerID;
     [SerializeField] GameObject Bomb;
     [SerializeField] TMP_Text NameHolder;
-    [SerializeField] SpriteLibrary spriteLibrary;
-    private SpriteRenderer spriteRenderer;
+    SpriteLibrary spriteLibrary;
     [SerializeField] SpriteLibraryAsset[] spriteLibraryAsset;
     Rigidbody2D RB;
     internal PlayerInput _playerInput;
@@ -36,6 +35,7 @@ public class PlayerScript : MonoBehaviour
         MaxBombPlaced = 3;
         CountBombPlaced = 0;
         SpaceHold = false;
+        changeSkin(PlayerID - 1);
 
     }
 
@@ -85,6 +85,11 @@ public class PlayerScript : MonoBehaviour
 
         else if (dir.y > 0f || dir.y < 0f) Animator.SetBool("IsRunning", true);
         else Animator.SetBool("IsRunning", false);
+    }
+
+    void changeSkin(int color)
+    {
+        spriteLibrary.spriteLibraryAsset = spriteLibraryAsset[color];
     }
     public void Die()
     {

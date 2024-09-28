@@ -271,7 +271,9 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
                 .WithControlsExcluding("<Mouse>/leftButton")
                 .WithControlsExcluding("<Mouse>/rightButton")
                 .WithControlsExcluding("<Mouse>/press")
-                .WithCancelingThrough("<Keyboard>/escape")
+                .WithControlsExcluding("<Keyboard>/escape")
+                .WithControlsExcluding("<Keyboard>/anykey")
+                .WithCancelingThrough("")
                 .OnCancel(
                     operation =>
                     {
