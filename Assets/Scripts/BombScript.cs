@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.U2D.Animation;
 
 public class BombScript : MonoBehaviour
 {
@@ -8,11 +9,17 @@ public class BombScript : MonoBehaviour
     public PlayerScript Player;
     BoxCollider2D boxCollider;
     public GameObject Explosion;
+    SpriteLibrary spriteLibrary;
+    [SerializeField] SpriteLibraryAsset[] spriteLibraryAsset;
+    SpriteRenderer spriteRender;
     void Start()
     {
         StartingTime = DateTime.Now;
         Size = 2;
+        spriteRender = GetComponent<SpriteRenderer>();
         boxCollider = GetComponent<BoxCollider2D>();
+        spriteLibrary = GetComponent<SpriteLibrary>();
+        changeSkin(1);
     }
 
     // Update is called once per frame
@@ -22,6 +29,7 @@ public class BombScript : MonoBehaviour
         if (ts.Seconds >= 3)
         {
             Explode(Size);
+            //if Player isn't dead, call this function to enable him to place a bomb again
             if (Player != null)
             {
                 Player.BombExploded();
@@ -46,11 +54,18 @@ public class BombScript : MonoBehaviour
         return Instantiate(bomb, pos, Quaternion.identity);
     }
 
-
-    public void Explode(int size, bool left = true, bool right = true, bool up = true, bool down = true, int i = 0)
+    void changeSkin(int skin)
     {
-        if(i <= size)
+        spriteLibrary.spriteLibraryAsset = spriteLibraryAsset[skin];
+    }
+
+
+    public void Explode(int explosionSize, bool left = true, bool right = true, bool up = true, bool down = true, int i = 0)
+    {
+        if(i <= explosionSize)
         {
+            //firstly check the bomb pos for a player, then recursively check tiles aroud the bomb in a + shape
+            //if indestructible tile is found, set the current dir to false (otherwise other destructibe tile behind an indestructible tile would be destroyed)
             if(i == 0)
             {
                 GameManager.CheckForPlayers((int)Math.Floor(transform.position.x), (int)Math.Floor(transform.position.y));
@@ -91,7 +106,7 @@ public class BombScript : MonoBehaviour
             }
 
             else down = false;
-            Explode(size, left, right, up, down, i + 1);
+            Explode(explosionSize, left, right, up, down, i + 1);
         }
     }
 }

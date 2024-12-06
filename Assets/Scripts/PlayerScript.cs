@@ -8,7 +8,6 @@ public class PlayerScript : MonoBehaviour
 {
     Vector2 dir;
     private Animator Animator;
-    public int PlayerID;
     [SerializeField] GameObject Bomb;
     [SerializeField] TMP_Text NameHolder;
     SpriteLibrary spriteLibrary;
@@ -16,6 +15,7 @@ public class PlayerScript : MonoBehaviour
     Rigidbody2D RB;
     internal PlayerInput _playerInput;
     internal int CountBombPlaced;
+    public int PlayerID;
     int MaxBombPlaced;
     internal Tilemap _destructible;
     bool SpaceHold;
